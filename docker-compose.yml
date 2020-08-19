@@ -1,0 +1,61 @@
+version: "3"
+services:
+
+  # GATEWAY FOR ALL MICROSERVICES
+  reverse-proxy:
+    image: nginx:1.17.10
+    container_name: reverse-proxy
+    depends_on:
+      - frontend
+      - customer-service
+      - inventory-service
+      - order-service
+    volumes: 
+      - ./reverse-proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+  # FRONTEND
+  frontend:
+    image: frontend
+    container_name: frontend
+    stdin_open: true
+    build:
+      context: ./frontend
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true      
+  
+  # CUSTOMER SERVICE
+  customer-service:
+    image: customer-service
+    container_name: customer-service
+    build: 
+      context: ./customer-service
+    ports:
+      - 8081:8080
+    restart: on-failure
+  
+  # INVENTORY SERVICE    
+  inventory-service:
+    image: inventory-service
+    container_name: inventory-service
+    build: 
+      context: ./inventory-service
+    ports:
+      - 8082:8080
+    restart: on-failure
+  
+  # ORDER SERVICE    
+  order-service:
+    image: order-service
+    container_name: order-service
+    build: 
+      context: ./order-service
+    ports:
+      - 8083:8080
+    restart: on-failure

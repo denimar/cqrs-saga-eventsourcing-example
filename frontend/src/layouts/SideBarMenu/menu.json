@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "label": "INFORMATIONS",
+    "children": [
+      {
+        "id": 2,
+        "label": "Dashboard",
+        "route": "/dashboard"
+      }
+    ]
+  },  
+  {
+    "id": 5,
+    "label": "BACKEND TESTS",
+    "children": [
+      {
+        "id": 6,
+        "label": "CQRS and Event Sourcing",
+        "route": "/cqrs"
+      },
+      {
+        "id": 7,
+        "label": "CQRS and Saga",
+        "route": "/transfers"
+      }
+    ]
+  },  
+  {
+    "id": 11,
+    "label": "MICRO FRONTENDS TEST",
+    "children": [
+      {
+        "id": 14,
+        "label": "Customers (React)",
+        "route": "/customers"
+      },
+      {
+        "id": 15,
+        "label": "Products (Vue)",
+        "route": "/products"
+      },
+      {
+        "id": 16,
+        "label": "Orders (Angular)",
+        "route": "/orders"
+      }
+    ]
+  }  
+]

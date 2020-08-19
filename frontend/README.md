@@ -1,0 +1,1 @@
+See the possibility of using BEM in this project: https://en.bem.info/methodology/quick-start/

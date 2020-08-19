@@ -1,0 +1,21 @@
+.numbersbox-container {
+
+  .box-header {
+    flex-direction: column !important;
+    align-items: flex-end;
+    padding-right: 15px;
+
+    .numbers-title {
+      color: #999999;
+      font-size: 14px;
+    }
+  
+    .numbers-value {
+      color: #3c4858;
+      font-size: 26px;
+    }
+  
+  }
+
+
+}

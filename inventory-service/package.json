@@ -1,0 +1,25 @@
+{
+  "name": "inventory-service",
+  "version": "1.0.0",
+  "description": "Testing Horizontal Communications using Node.js on Docker",
+  "author": "Denimar de Moraes <denimar@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx concurrently \"tsc -w\" \"nodemon build/server.js\""
+  },
+  "dependencies": {
+    "@types/mongodb": "^3.5.26",
+    "apollo-server": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.7"
+  }
+}

@@ -1,0 +1,32 @@
+.dashboard-container {
+  padding-top: 30px;
+  flex: 1;
+
+  .dashboard-numbers {
+    .dashboard-number-item {
+      margin-bottom: 35px;
+      .numbersbox-container {
+        margin-left: 0px;
+        margin-right: 0px;      
+      }
+    }  
+  }
+
+  .dashboard-forecasted-vs-actual-graph {
+    min-width: 100%;
+    width: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 6px;    
+
+    .highcharts-container {
+      width: 100% !important;
+
+      .highcharts-root {
+        width: 100% !important;
+        min-width: 100% !important;
+        background-color: #FFFFFF;
+      }
+    }  
+  }
+  
+}
