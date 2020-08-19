@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import AppHeader from '../AppHeader';
 import SideBarMenu from '../SideBarMenu';

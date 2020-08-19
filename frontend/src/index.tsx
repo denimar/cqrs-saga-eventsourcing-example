@@ -8,7 +8,7 @@ import { SERVER_HOST } from './utils/constants';
 
 const graphQlClient = new ApolloClient({
   uri: SERVER_HOST,
-  cache: new InMemoryCache()
+  //cache: new InMemoryCache()
 });
 
 ReactDOM.render(

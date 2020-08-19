@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useQuery, gql } from '@apollo/client';
 import CustomersCard from '../../components/CustomersCard';
 import './Cqrs.scss'
