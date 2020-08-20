@@ -7,6 +7,4 @@ var mongoNative_1 = require("./util/mongoNative");
 var createApolloServer_1 = __importDefault(require("./util/createApolloServer"));
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-mongoNative_1.mongoNativeConnect(process.pid, function () {
-    createApolloServer_1.default();
-});
+mongoNative_1.mongoNativeConnect(process.pid, function () { return createApolloServer_1.default(); });

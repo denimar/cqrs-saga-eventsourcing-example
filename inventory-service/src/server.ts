@@ -3,6 +3,4 @@ import createApolloServer from './util/createApolloServer'
 import dotenv from 'dotenv'
 dotenv.config()
 
-mongoNativeConnect(process.pid, () => {
-  createApolloServer()
-})
+mongoNativeConnect(process.pid, () => createApolloServer())

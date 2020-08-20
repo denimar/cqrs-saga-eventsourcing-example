@@ -1,8 +1,8 @@
-import gql from 'graphql-tag';
+import { gql } from 'apollo-server'
 
 export default gql`
   extend type Query {
-    products: [ProductType]
+    products: [Product]
   }
 
   type ProductStockType {
@@ -10,8 +10,8 @@ export default gql`
     reserved: Float
   }
 
-  type ProductType {
-    _id: String
+  type Product @key(fields: "_id") {
+    _id: ID!
     sku: String
     title: String    
     category: String

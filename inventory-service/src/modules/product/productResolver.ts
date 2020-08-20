@@ -1,6 +1,6 @@
-import { IResolvers } from "apollo-server"
+import { GraphQLResolverMap } from 'apollo-graphql'
 
-const productResolver: IResolvers = {
+const productResolver: GraphQLResolverMap<any> = {
   Query: {
     products: (parent, args, { productService }, info) => {
       return productService.fetchAll()

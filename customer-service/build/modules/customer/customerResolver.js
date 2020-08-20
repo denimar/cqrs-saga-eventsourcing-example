@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var productResolver = {
+var customerResolver = {
     Query: {
         customers: function (parent, args, _a, info) {
             var customerService = _a.customerService;
@@ -8,4 +8,4 @@ var productResolver = {
         }
     }
 };
-exports.default = productResolver;
+exports.default = customerResolver;

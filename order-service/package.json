@@ -5,9 +5,20 @@
   "author": "Denimar de Moraes <denimar@gmail.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "build": "tsc",
+    "start": "npx concurrently \"tsc -w\" \"nodemon build/server.js\""
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@apollo/federation": "latest",
+    "@types/mongodb": "^3.5.26",
+    "apollo-server": "latest",
+    "dotenv": "^8.2.0",
+    "graphql": "latest",
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.7"
   }
 }

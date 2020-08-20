@@ -1,8 +1,8 @@
-import gql from 'graphql-tag';
+import { gql } from 'apollo-server'
 
 export default gql`
   extend type Query {
-    customers: [CustomerType]
+    customers: [Customer]
   }
 
   type AddressType {
@@ -12,18 +12,13 @@ export default gql`
     city: String
   }
 
-  type CustomerType {
-    _id: String
+  type Customer @key(fields: "_id") {
+    _id: ID!
+    name: String    
+    email: String    
     phone: String
-    hiringDate: String
     avatar: String
-    eyeColor: String
-    email: String
     address: AddressType
-    name: String
-    company: String
     age: Int
-    gender: String
-    salary: Float
   }
 `

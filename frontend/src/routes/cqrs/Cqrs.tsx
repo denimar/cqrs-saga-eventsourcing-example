@@ -13,16 +13,11 @@ interface ICustomerAddress {
 interface ICustomer {
   _id: string;
   phone: string;
-  hiringDate: string;
   avatar: string;
-  eyeColor: string;
   email: string;
   address: ICustomerAddress
   name: string;
-  company: string;
   age: number;
-  gender: string;
-  salary: number;
 }
 
 const CUSTOMERS_QUERY = gql`
@@ -30,9 +25,7 @@ const CUSTOMERS_QUERY = gql`
     customers {
       _id
       phone
-      hiringDate
       avatar
-      eyeColor
       email
       address {
         zipCode
@@ -41,10 +34,7 @@ const CUSTOMERS_QUERY = gql`
         city
       }
       name
-      company
       age
-      gender
-      salary
     }
   }
 `

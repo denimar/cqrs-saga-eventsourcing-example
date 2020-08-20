@@ -46,37 +46,32 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var apollo_server_1 = require("apollo-server");
+var federation_1 = require("@apollo/federation");
 var appModule_1 = require("../modules/appModule");
-var logger_1 = __importDefault(require("./logger"));
 var createApolloServer = function () {
     var server = new apollo_server_1.ApolloServer({
-        typeDefs: appModule_1.typeDefs,
-        resolvers: appModule_1.resolvers,
-        context: function (_a) {
-            var req = _a.req, res = _a.res;
-            return __awaiter(void 0, void 0, void 0, function () {
-                return __generator(this, function (_b) {
-                    return [2 /*return*/, __assign({}, appModule_1.services)];
-                });
+        schema: federation_1.buildFederatedSchema([{
+                typeDefs: appModule_1.typeDefs,
+                resolvers: appModule_1.resolvers,
+            }]),
+        context: function () { return __awaiter(void 0, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, __assign({}, appModule_1.services)];
             });
-        },
+        }); },
         logger: {
             info: function (message) { return console.log('Denimar info : ' + message); },
             debug: function (message) { return console.log('Denimar debug: ' + message); },
             warn: function (message) { return console.log('Denimar warn: ' + message); },
             error: function (message) { return console.log('Denimar error: ' + message); },
-        },
-        debug: true
+        }
     });
-    var port = process.env.PORT || 8080;
+    var port = process.env.PORT || 8082;
     server.listen({ port: port }).then(function (_a) {
         var url = _a.url;
-        logger_1.default.info("\uD83D\uDE80  Server running at " + url);
+        console.log("\uD83D\uDE80 Server ready at: " + url);
     });
 };
 exports.default = createApolloServer;

@@ -17,7 +17,7 @@ const CustomersCard: React.FC<ICustomersCardProps> = ({ customers }) => {
 
   return (
     <div className="customers-card-container">
-      <div className="customers-card-title">Customers 444</div>
+      <div className="customers-card-title">Customers 666</div>
       {
         customers.map((customer: ICustomersCardItem) => {
           const { _id, avatar, name } = customer
