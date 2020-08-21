@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Testing Horizontal Communications using Node.js on Docker",
   "author": "Denimar de Moraes <denimar@gmail.com>",
-  "main": "server.js",
+  "main": "build/server.js",
   "scripts": {
     "build": "tsc",
     "watch:tsc": "tsc -w",
