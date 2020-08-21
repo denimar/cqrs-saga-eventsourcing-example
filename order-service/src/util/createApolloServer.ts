@@ -14,7 +14,7 @@ const createApolloServer = () => {
       }
     },
     logger: {
-      info: (message: string) => console.log('Denimar info : ' + message),]
+      info: (message: string) => console.log('Denimar info : ' + message),
       debug: (message: string) => console.log('Denimar debug: ' + message),
       warn: (message: string) => console.log('Denimar warn: ' + message),
       error: (message: string) => console.log('Denimar error: ' + message),

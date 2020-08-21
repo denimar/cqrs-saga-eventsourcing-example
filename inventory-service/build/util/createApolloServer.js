@@ -68,10 +68,10 @@ var createApolloServer = function () {
             error: function (message) { return console.log('Denimar error: ' + message); },
         }
     });
-    var port = process.env.PORT || 8083;
+    var port = process.env.PORT || 8080;
     server.listen({ port: port }).then(function (_a) {
         var url = _a.url;
-        console.log("\uD83D\uDE80 Server ready at: " + url);
+        console.log("\uD83D\uDE80 Inventory Service running at: " + url);
     });
 };
 exports.default = createApolloServer;
