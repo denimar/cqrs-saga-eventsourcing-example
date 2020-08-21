@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client';
-import CustomersCard from '../../components/CustomersCard';
 import './Cqrs.scss'
+import ItemsCard from '../../components/ItemsCard';
 
 interface ICustomerAddress {
   zipCode: string;
@@ -43,13 +43,22 @@ const Cqrs: React.FC = () => {
   const { loading, error, data } = useQuery(CUSTOMERS_QUERY);
   
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;  
+  if (error) return <p>{ `Error: ${error.message}`}</p>;  
 
   const customers: ICustomer[] = data['customers']
 
   return (
     <div>
-      <CustomersCard customers={ customers } />
+      <ItemsCard title="Customers" items={ customers } itemRenderer={ (customer: ICustomer) => {
+          const { _id, avatar, name } = customer
+          return (
+            <>
+            <img src={ avatar } alt="avatar" />
+            <span className="customers-card-name">{ name }</span>
+            </>
+          )
+        }} 
+      />
     </div>
   )
 }

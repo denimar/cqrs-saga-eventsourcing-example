@@ -1,10 +1,10 @@
 FROM node:12.18.3
 
 # set working directory
-WORKDIR /usr/src/app
+WORKDIR /usr/app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# add `/usr/app/node_modules/.bin` to $PATH
+ENV PATH /usr/app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package*.json ./
