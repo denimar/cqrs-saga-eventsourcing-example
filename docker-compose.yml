@@ -42,6 +42,8 @@ services:
       - order-service
     build: 
       context: ./api-gateway
+    volumes:
+      - './api-gateway/src:/usr/app/src:delegated'
     restart: on-failure
 
   # CUSTOMER SERVICE
@@ -51,7 +53,7 @@ services:
     build: 
       context: ./customer-service
     volumes:
-      - './customer-service:/usr/app'
+      - './customer-service/src:/usr/app/src:delegated'
     restart: on-failure
   
   # INVENTORY SERVICE    
@@ -61,7 +63,7 @@ services:
     build: 
       context: ./inventory-service
     volumes:
-      - './inventory-service:/usr/app'
+      - './inventory-service/src:/usr/app/src:delegated'
     restart: on-failure
   
   # ORDER SERVICE    
@@ -71,5 +73,5 @@ services:
     build: 
       context: ./order-service
     volumes:
-      - './order-service:/usr/app'
+      - './order-service/src:/usr/app/src:delegated'
     restart: on-failure

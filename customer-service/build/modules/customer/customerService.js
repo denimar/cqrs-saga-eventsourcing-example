@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoNative_1 = require("../../util/mongoNative");
+<<<<<<< HEAD
 var fetchAll = function () { return __awaiter(void 0, void 0, void 0, function () {
     var items;
     return __generator(this, function (_a) {
@@ -51,6 +52,11 @@ var fetchAll = function () { return __awaiter(void 0, void 0, void 0, function (
         }
     });
 }); };
+=======
+var fetchAll = function () {
+    return mongoNative_1.customersCol.find().sort({ name: 0 }).toArray();
+};
+>>>>>>> develop
 exports.default = {
     fetchAll: fetchAll
 };

@@ -1,5 +1,5 @@
-const { ApolloServer } = require("apollo-server");
-const { ApolloGateway } = require("@apollo/gateway");
+import { ApolloServer } from 'apollo-server'
+import { ApolloGateway } from '@apollo/gateway'
 
 const server = new ApolloServer({
   gateway: new ApolloGateway({

@@ -16,8 +16,8 @@
     "children": [
       {
         "id": 6,
-        "label": "CQRS and Event Sourcing",
-        "route": "/cqrs"
+        "label": "Saga",
+        "route": "/saga"
       },
       {
         "id": 7,

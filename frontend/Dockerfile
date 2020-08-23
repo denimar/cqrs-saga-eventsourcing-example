@@ -3,7 +3,7 @@ FROM node:12.18.3
 # set working directory
 WORKDIR /usr/app
 
-# add `/app/node_modules/.bin` to $PATH
+# add `/usr/app/node_modules/.bin` to $PATH
 ENV PATH /usr/app/node_modules/.bin:$PATH
 
 # install app dependencies
