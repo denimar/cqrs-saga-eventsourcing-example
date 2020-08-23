@@ -1,22 +1,13 @@
-import { useQuery, gql } from '@apollo/client';
+import React from 'react'
+import { useQuery, gql, ApolloError } from '@apollo/client';
+import ICustomer from './ICustomer';
 
-interface ICustomerAddress {
-    zipCode: string;
-    street: string;
-    state: string;
-    city: string;
+  interface IUseConstomersReturn {
+    loadingCustomers: boolean;    
+    errorFetchingCustomers?: ApolloError;
+    customers: ICustomer[];
   }
-  
-  interface ICustomer {
-    _id: string;
-    phone: string;
-    avatar: string;
-    email: string;
-    address: ICustomerAddress
-    name: string;
-    age: number;
-  }
-  
+
   const CUSTOMERS_QUERY = gql`
     query fetchCustomers {
       customers {
@@ -36,13 +27,13 @@ interface ICustomerAddress {
     }
   `
 
-const useConstomers = () => {
-  const { loading, error, data } = useQuery(CUSTOMERS_QUERY);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{ `Error: ${error.message}`}</p>;  
-
-  const customers: ICustomer[] = data['customers']
+const useCustomers: () => IUseConstomersReturn = () => {
+  const { loading, error, data = { customers: [] } } = useQuery(CUSTOMERS_QUERY);
+  return {
+    loadingCustomers: loading, 
+    errorFetchingCustomers: error,
+    customers: data['customers']
+  }  
 }
 
 export default useCustomers

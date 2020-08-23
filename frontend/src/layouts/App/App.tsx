@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import AppContext from '../../contexts/AppContext';
 import Dashboard from '../../routes/dashboard';
-import Cqrs from '../../routes/cqrs';
+import Saga from '../../routes/saga';
 
 interface IAppProps {
   graphQlClient: ApolloClient<NormalizedCacheObject>
@@ -32,8 +32,8 @@ const App: React.FC<IAppProps>  = ({ graphQlClient }) => {
                   <Route path="/dashboard">
                     <Dashboard />
                   </Route>                
-                  <Route path="/cqrs"> 
-                    <Cqrs />
+                  <Route path="/saga"> 
+                    <Saga />
                   </Route>                
                   <Route path="/customers"> 
                     <div>Todo: Implement Customers Here in React</div>

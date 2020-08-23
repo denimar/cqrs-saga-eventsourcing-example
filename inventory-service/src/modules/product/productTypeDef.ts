@@ -14,8 +14,6 @@ export default gql`
     _id: ID!
     sku: String
     title: String    
-    category: String
-    description: String
     picture: String
     price: Float
     stock: ProductStockType

@@ -1,5 +1,3 @@
-import { gql, IResolvers } from 'apollo-server'
-
 //TypeDefs
 import productTypeDef from './product/productTypeDef'
 
